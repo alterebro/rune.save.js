@@ -1,0 +1,21 @@
+{
+  "name": "rune.save.js",
+  "version": "0.0.1",
+  "description": "Rune.js plugin for saving a rune sketch as svg, png, jpg and webp (WebP only on Chrome)",
+  "main": "src/save.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alterebro/rune.save.js.git"
+  },
+  "keywords": [],
+  "author": "Jorge Moreno, moro.es (@alterebro)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alterebro/rune.save.js/issues"
+  },
+  "homepage": "https://github.com/alterebro/rune.save.js#readme",
+  "dependencies": {
+    "rune.js": "^1.1.7"
+  }
+}
