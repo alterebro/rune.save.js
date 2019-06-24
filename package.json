@@ -1,6 +1,6 @@
 {
   "name": "rune.save.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rune.js plugin for saving a rune sketch as svg, png, jpg and webp (WebP only on Chrome)",
   "main": "src/save.js",
   "scripts": {},
