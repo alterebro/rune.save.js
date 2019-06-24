@@ -3,7 +3,14 @@
   "version": "0.1.0",
   "description": "Rune.js plugin for saving a rune sketch as svg, png, jpg and webp (WebP only on Chrome)",
   "main": "src/save.js",
-  "scripts": {},
+  "scripts": {
+      "prebuild": "rm -rf dist",
+      "build" : "npm run build:plugin && npm run build:script && npm run minify:plugin && npm run minify:script",
+      "build:plugin" : "rune build",
+      "build:script" : "webpack --entry ./src/svg.save.js --output-filename ./dist/svg.save.js",
+      "minify:plugin": "uglifyjs dist/rune.save.js --output dist/rune.save.js",
+      "minify:script": "uglifyjs dist/svg.save.js --output dist/svg.save.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alterebro/rune.save.js.git"
