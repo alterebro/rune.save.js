@@ -1,9 +1,9 @@
 {
   "name": "rune.save.js",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Rune.js plugin for saving a Rune SVG Sketch as svg, png, jpg and WebP. It works also as a standalone script to save SVG elements as images",
   "main": "src/save.js",
-  "unpkg" : "dist/rune.save.js",
+  "unpkg": "dist/rune.save.js",
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "npm run build:plugin && npm run build:script && npm run minify:plugin && npm run minify:script",
@@ -18,7 +18,15 @@
     "type": "git",
     "url": "git+https://github.com/alterebro/rune.save.js.git"
   },
-  "keywords": ["rune.js", "svg", "png", "jpg", "webp", "save", "plugin"],
+  "keywords": [
+    "rune.js",
+    "svg",
+    "png",
+    "jpg",
+    "webp",
+    "save",
+    "plugin"
+  ],
   "author": "Jorge Moreno, moro.es (@alterebro)",
   "license": "MIT",
   "bugs": {
