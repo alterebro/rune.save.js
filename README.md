@@ -1,7 +1,7 @@
 # rune.save.js
 
 > **rune.save.js + svg.save.js**  
-> Save a SVG Element as an Image (JPG, PNG, SVG and WebP). It works as standalone script and as [Rune.js](http://runemadsen.github.io/rune.js/) Plugin.
+> Export any SVG Element and save them as image (JPG, PNG, SVG and WebP). It works as standalone script and as [Rune.js](http://runemadsen.github.io/rune.js/) Plugin.
 
 ## Installation
 
@@ -16,10 +16,10 @@ It's also available on *unpkg* :
 
 ## Usage
 
-1. Include the .js file on your document
+**Include the .js file on your HTML document**
 
 ```html
-<!-- Include the Rune.js Plugin from your file system or unpkg -->
+<!-- Include the Rune.js Plugin using the path to your downloaded file or the unpkg CDN url -->
 <script src="./path/rune.save.js"></script>
 <script src="https://unpkg.com/rune.save.js/dist/rune.save.js"></script>
 
@@ -28,7 +28,7 @@ It's also available on *unpkg* :
 <script src="https://unpkg.com/rune.save.js/dist/svg.save.js"></script>
 ```
 
-2. Call the `save()` method
+**Call the `save()` method passing the filename as parameter.** ( i.e: *'sketch.png'* to be saved as PNG. )
 
 ```javascript
 // As Rune.js Plugin
@@ -37,46 +37,47 @@ const r = new Rune({
     width: 600,
     height: 600
 });
-/* ... your code ... */
-r.save();
+// ...
+// Use the extension of the desired filetype: svg, jpg, png (webp also on Chrome)
+r.save('myImage.jpg');
 
 // ---
 
 // As standalone script, create a new exportable SVG Object (xSVG)
-// then call the save method
+// Then call the save method passing the query selector for the target SVG element as parameter
 let drawing = new xSVG('#svgSketch');
     drawing.save();
 ```
 
-3. Options
+**Options**
 
 ```javascript
-// 3 optional parameters : filename, scale, quality
+// The save method has three optional parameters : filename, scale & quality
 // Example :
 
 let sketch = new xSVG('#svgSketch');
-    sketch.save('sketch.png', 3);
+    sketch.save('sketch.png', 3, .5);
 
 // Image exported as PNG with filename 'sketch.png'
-// and output dimensions as 3x the SVG source size
+// with output file dimensions 3 times the SVG source size
+// and a 0.5 over 1 image quality. (Options explained below)
 ```
-
 
 ## API
 
 ### save(file, scale, quality)
 
 #### — *file*
-String indicating the filename including the extension that will be used as the image format (i.e: *'myImage.png'*).  
+`String` indicating the filename including the extension that will be used as the image format (i.e: *'myImage.png'*).  
 Allowed image extensions are: svg, png, jpg, jpeg and webp (WebP only works on Chrome).  
 The default value is: `'image.jpg'`
 
 #### — *scale*
-Number that indicates the multiplier used to create the raster image image size dimensions output. In the case that we have a `400x400` SVG file, and a scale multiplier of `3`, the output raster image will have a `1200x1200` size (x3).  
+`Number` that indicates the multiplier used to create the raster image image size dimensions output. In the case that we have a `400x400` SVG file, and a scale multiplier of `3`, the output raster image will have a `1200x1200` size (x3).  
 The default value is `2`
 
 #### — *quality*
-Number between 0 and 1 indicating the image quality to use for image formats that use lossy compression such as image/jpeg and image/webp.   
+`Number` between 0 and 1 indicating the image quality to use for image formats that use lossy compression such as `image/jpeg` and `image/webp`.  
 The default value is `0.92`
 
 
