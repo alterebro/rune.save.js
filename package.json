@@ -1,21 +1,24 @@
 {
   "name": "rune.save.js",
   "version": "0.2.0",
-  "description": "Rune.js plugin for saving a rune sketch as svg, png, jpg and webp (WebP only on Chrome)",
+  "description": "Rune.js plugin for saving a Rune SVG Sketch as svg, png, jpg and WebP. It works also as a standalone script to save SVG elements as images",
   "main": "src/save.js",
+  "unpkg" : "dist/rune.save.js",
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "npm run build:plugin && npm run build:script && npm run minify:plugin && npm run minify:script",
     "build:plugin": "rune build",
     "build:script": "webpack --entry ./src/svg.save.js --output-filename ./dist/svg.save.js",
     "minify:plugin": "uglifyjs dist/rune.save.js --output dist/rune.save.js",
-    "minify:script": "uglifyjs dist/svg.save.js --output dist/svg.save.js"
+    "minify:script": "uglifyjs dist/svg.save.js --output dist/svg.save.js",
+    "version": "npm run build && git add -A dist/",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alterebro/rune.save.js.git"
   },
-  "keywords": [],
+  "keywords": ["rune.js", "svg", "png", "jpg", "webp", "save", "plugin"],
   "author": "Jorge Moreno, moro.es (@alterebro)",
   "license": "MIT",
   "bugs": {
