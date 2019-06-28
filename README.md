@@ -44,7 +44,8 @@ r.save('myImage.jpg');
 // ---
 
 // As standalone script, create a new exportable SVG Object (xSVG)
-// Then call the save method passing the query selector for the target SVG element as parameter
+// passing the CSS selector string for the target SVG element as parameter.
+// Then call the save method.
 let drawing = new xSVG('#svgSketch');
     drawing.save();
 ```
