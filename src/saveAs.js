@@ -16,6 +16,7 @@ const saveAs = function(filename = 'image.jpg', scale = 2, quality = .92) {
 
     // ------
     // Attach trigger link to document
+    let _trigger = null;
     if ( !document.getElementById(_triggerID) ) {
 
         _trigger = document.createElement('a');
