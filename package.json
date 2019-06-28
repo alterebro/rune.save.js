@@ -1,6 +1,6 @@
 {
   "name": "rune.save.js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Rune.js plugin for saving a Rune SVG Sketch as svg, png, jpg and WebP. It works also as a standalone script to save SVG elements as images",
   "main": "src/save.js",
   "unpkg": "dist/rune.save.js",
